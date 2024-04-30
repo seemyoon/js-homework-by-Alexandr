@@ -42,12 +42,12 @@ console.log(typeof b)
 console.log(typeof c)
 // Task 4: Додаткове для тих хто цікавився prompt`oм - За допомогою 3х різних prompt() отримати 3 слова які
 // являються вашими Імям, По-Батькові та роками. та вивести в консоль
-const firstName2 = prompt();
-const lastName2 = prompt();
-const year = prompt();
-console.log(firstName2)
-console.log(lastName2)
-console.log(year)
+const firstName2 = prompt("Enter your first name");
+const lastName2 = prompt("Enter your last name");
+const year = prompt("Enter your age");
+console.log("Name:" + firstName2)
+console.log("Last name:" + lastName2)
+console.log("Year:" + year)
 //-----------------Або так, мені так більше подобається :) (одна змінна через шаблоні літерали приймає всі
 // значення)---------
 // const firstName2 = prompt();
