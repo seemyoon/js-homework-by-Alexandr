@@ -177,14 +177,59 @@ const temperatures = [{
 ]
 console.log(temperatures.length); //7 days
 console.log(temperatures[0].morning) // for example first Monday morning of the first week equal 23, the second will
-// change (next line can be temperatureMondayMorning = 24 and the value will change)
+// change (we set the new value on next line, which can be temperatureMondayMorning = 24 and the value will change)
 
 // Логічні розгалуження:
 //     - Є змінна х, якій ви надаєте довільне числове значення.
 //     Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
+let x = 23;
+if (x !== 0) {
+    console.log('Вірно');
+} else {
+    console.log('Невірно')
+}
+
+let a = 1;
+if (a !== 0) {
+    console.log('Вірно');
+} else {
+    console.log('Невірно')
+}
+a = 0;
+if (a !== 0) {
+    console.log('Вірно');
+} else {
+    console.log('Невірно')
+}
+a = -3;
+if (a !== 0) {
+    console.log('Вірно');
+} else {
+    console.log('Невірно')
+}
 // - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
+const time = 45;
+if (time <= 15) {
+    console.log("first part of hour")
+} else if (time > 15 && time <= 30) {
+    console.log("second part of hour")
+} else if (time > 30 && time <= 45) {
+    console.log("third part of hour")
+} else if (time > 45 && time <= 59) {
+    console.log("fourth part")
+} else {
+    console.log("the value more than 59")
+}
 // - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+const day = 23;
+if (day <= 10) {
+    console.log("first ten days of the month")
+} else if (day > 10 && day <= 20) {
+    console.log("second ten days of the month")
+} else if (day > 20 && day <= 31) {
+    console.log("third ten days of the month")
+}
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
