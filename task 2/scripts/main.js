@@ -110,74 +110,87 @@ console.log(users[9].password)
 // Як зробити цей масив - вам потрібно подумати. Нормальних варіантів опису - 2. Варіант, коли в вас буде
 // одновимірний  масив з 21 значенням вичключаємо одразу
 //Monday
-let temperatureMondayMorning = 23;
-let temperatureMondayAfternoon = 24;
-let temperatureMondayNight = 21;
-//Tuesday
-let temperatureTuesdayMorning = 28;
-let temperatureTuesdayAfternoon = 30;
-let temperatureTuesdayNight = 20;
-//Wednesday
-let temperatureWednesdayMorning = 28;
-let temperatureWednesdayAfternoon = 27;
-let temperatureWednesdayNight = 23;
-//Thursday
-let temperatureThursdayMorning = 24;
-let temperatureThursdayAfternoon = 29;
-let temperatureThursdayNight = 19;
-//Friday
-let temperatureFridayMorning = 22;
-let temperatureFridayAfternoon = 23;
-let temperatureFridayNight = 19;
-//Saturday
-let temperatureSaturdayMorning = 24;
-let temperatureSaturdayAfternoon = 32;
-let temperatureSaturdayNight = 23;
-//Sunday
-let temperatureSundayMorning = 22;
-let temperatureSundayAfternoon = 32;
-let temperatureSundayNight = 19;
+const temperatures = [
+    {
+        day: "monday",
+        morning: 23,
+        afternoon: 24,
+        night: 21
+    },
+    {
+        day: "tuesday",
+        morning: 28,
+        afternoon: 30,
+        night: 20
+    },
+    {
+        day: "wednesday",
+        morning: 28,
+        afternoon: 27,
+        night: 23
+    },
+    {
+        day: "thursday",
+        morning: 24,
+        afternoon: 29,
+        night: 19
+    },
+    {
+        day: "friday",
+        morning: 22,
+        afternoon: 23,
+        night: 19
+    },
+    {
+        day: "saturday",
+        morning: 24,
+        afternoon: 32,
+        night: 23
+    },
+    {
+        day: "sunday",
+        morning: 22,
+        afternoon: 32,
+        night: 19
+    }
+];
 
-const temperatures = [{
-    day: "monday",
-    morning: temperatureMondayMorning + " degrees",
-    afternoon: temperatureMondayAfternoon + " degrees",
-    night: temperatureMondayNight + " degrees"
-}, {
-    day: "tuesday",
-    morning: temperatureTuesdayMorning + " degrees",
-    afternoon: temperatureTuesdayAfternoon + " degrees",
-    night: temperatureTuesdayNight + " degrees"
-}, {
-    day: "wednesday",
-    morning: temperatureWednesdayMorning + " degrees",
-    afternoon: temperatureWednesdayAfternoon + " degrees",
-    night: temperatureWednesdayNight + " degrees"
-}, {
-    day: "thursday",
-    morning: temperatureThursdayMorning + " degrees",
-    afternoon: temperatureThursdayAfternoon + " degrees",
-    night: temperatureThursdayNight + " degrees"
-}, {
-    day: "friday",
-    morning: temperatureFridayMorning + " degrees",
-    afternoon: temperatureFridayAfternoon + " degrees",
-    night: temperatureFridayNight + " degrees"
-}, {
-    day: "saturday",
-    morning: temperatureSaturdayMorning + " degrees",
-    afternoon: temperatureSaturdayAfternoon + " degrees",
-    night: temperatureSaturdayNight + " degrees"
-}, {
-    day: "sunday",
-    morning: temperatureSundayMorning + " degrees",
-    afternoon: temperatureSundayAfternoon + " degrees",
-    night: temperatureSundayNight + " degrees"
-}
-]
 console.log(temperatures.length); //7 days
-console.log(temperatures[0].morning) // for example first Monday morning of the first week equal 23, the second will
-// change (we set the new value on next line, which can be temperatureMondayMorning = 24 and the value will change)
+// Monday
+temperatures[0].morning = 24;
+temperatures[0].afternoon = 25;
+temperatures[0].night = 28;
+
+// Tuesday
+temperatures[1].morning = 22;
+temperatures[1].afternoon = 26;
+temperatures[1].night = 27;
+
+// Wednesday
+temperatures[2].morning = 23;
+temperatures[2].afternoon = 27;
+temperatures[2].night = 26;
+
+// Thursday
+temperatures[3].morning = 21;
+temperatures[3].afternoon = 25;
+temperatures[3].night = 24;
+
+// Friday
+temperatures[4].morning = 20;
+temperatures[4].afternoon = 24;
+temperatures[4].night = 23;
+
+// Saturday
+temperatures[5].morning = 22;
+temperatures[5].afternoon = 26;
+temperatures[5].night = 25;
+
+// Sunday
+temperatures[6].morning = 23;
+temperatures[6].afternoon = 25;
+temperatures[6].night = 27;
+// Third week is the same, just another value
 
 // Логічні розгалуження:
 //     - Є змінна х, якій ви надаєте довільне числове значення.
@@ -230,13 +243,88 @@ if (day <= 10) {
 } else if (day > 20 && day <= 31) {
     console.log("third ten days of the month")
 }
-// - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+// - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані
+// відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
+let i = 1
+// or like that (need to add ${}):
+// let i = prompt("Enter the number from 1 to 5 to get the information of activities")
+switch (i) {
+    case 1:
+        console.log("Learn IT language");
+        break
+    case 2:
+        console.log("Do sport");
+        break;
+    case 3:
+        console.log("Relax");
+        break
+    case 4:
+        console.log("Learn English")
+        break
+    case 5:
+        console.log("Go to sleep")
+        break
+    default:
+        console.log("Enter the number from 1 to 5 to get the information of activities")
+}
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
 //         Також потрібно врахувати коли введені рівні числа.
-//
-//     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
-//         буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
-//
-//
+const valueUser1 = 5;
+const valueUser2 = 14;
+if (valueUser1 > valueUser2) {
+    console.log("Your first value more than second")
+} else if (valueUser1 < valueUser2) {
+    console.log("Your second value more than second")
+} else if (valueUser1 === valueUser2) {
+    console.log("Your first value and the second equal each other")
+} else {
+    console.log("You have entered a wrong value")
+}
+//  - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
+//         буде присвоювати змінній х значення "default"  якщо ви намагаєтесь присвоїти в неї falsy-значення
+//         (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
+let x2 = NaN;
+if (!x2) {
+    x2 = "default"
+}
+console.log(x2)
 //     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+if (coursesAndDurationArray[0].monthDuration >= 5) {
+    console.log("It's super")
+} else {
+    console.log("It's bad")
+}
+if (coursesAndDurationArray[1].monthDuration >= 5) {
+    console.log("It's super")
+} else {
+    console.log("It's bad")
+}
+if (coursesAndDurationArray[2].monthDuration >= 5) {
+    console.log("It's super")
+} else {
+    console.log("It's bad")
+}
+if (coursesAndDurationArray[3].monthDuration >= 5) {
+    console.log("It's super")
+} else {
+    console.log("It's bad")
+}
+if (coursesAndDurationArray[4].monthDuration >= 5) {
+    console.log("It's super")
+} else {
+    console.log("It's bad")
+}
+if (coursesAndDurationArray[5].monthDuration >= 5) {
+    console.log("It's super")
+} else {
+    console.log("It's bad")
+}
