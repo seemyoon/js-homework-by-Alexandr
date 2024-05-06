@@ -1,0 +1,10 @@
+.users-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.user-block, .address-block {
+    display: flex;
+    flex-direction: column;
+
+}
