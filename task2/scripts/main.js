@@ -246,7 +246,7 @@ if (day <= 10) {
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані
 // відображається інфа що заплановано на цей день (можна замість плану на день, назву дня англійською).
 let i = 1
-// or like that (need to add ${}):
+// or like that (need to add + near i):
 // let i = prompt("Enter the number from 1 to 5 to get the information of activities")
 switch (i) {
     case 1:
@@ -328,3 +328,9 @@ if (coursesAndDurationArray[5].monthDuration >= 5) {
 } else {
     console.log("It's bad")
 }
+let z = 0;
+z = z + 1;
+let y = z + 1;
+y +=1
+console.log(z)
+console.log(y)
