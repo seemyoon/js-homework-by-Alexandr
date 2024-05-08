@@ -88,6 +88,25 @@ const liFunc3 = (array) => {
 liFunc3(mixedArray2)
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+const usersArray = [
+    {id: 1, name: "John", age: 30},
+    {id: 2, name: "Alice", age: 25},
+    {id: 3, name: "Bob", age: 35},
+    {id: 4, name: "Emily", age: 28},
+    {id: 5, name: "Michael", age: 40}
+];
+const userFunc = (users) => {
+    for (const user of users) {
+        document.write(`
+            <div>
+                <h2>Id: ${user.id}</h2>
+                <h2>Name: ${user.name}</h2>
+                <h2>Age: ${user.age}</h2>
+            </div>
+                `)
+    }
+}
+userFunc(usersArray)
 // - створити функцію яка повертає найменьше число з масиву
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
