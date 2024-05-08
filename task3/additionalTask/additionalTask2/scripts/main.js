@@ -1,254 +1,289 @@
-/*За допомогою циклу вивести всю інформацію про користувачів використовуючи шаблон Template 1.1
-        * за допомоги стилів, побудувати сітку по 2 об'єкта в лінію
-        *
-        * */
+console.log("start")
+// --створити масив з:
+// - з 5 числових значень
+const array1 = [132, 2132, 33, 44, 53353];
+// - з 5 стічкових значень
+const array2 = ["Alexandr", "Ivan", "Max", "Andrew", "Petro"];
+// - з 5 значень стрічкового, числового та булевого типу
+const array3 = [32, "Ivan", false, "game", 98];
+// - та вивести його в консоль
+console.log(array1)
+console.log(array2)
+console.log(array3)
+// -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
+const array4 = [];
+array4[0] = false
+array4[1] = "salad"
+array4[2] = 82
+array4[3] = 27
+array4[4] = true
+console.log(array4)
+// - є масив [2,17,13,6,22,31,45,66,100,-18] :
+// 1. перебрати його циклом while
+const array5 = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18]
+let i = 0;
+while (i < array5.length) {
+    console.log(array5[i])
+    i++
+}
+// 2. перебрати його циклом for
+for (let j = 0; j < array5.length; j++) {
+    console.log(array5[j])
+}
+// 3. перебрати циклом while та вивести  числа тільки з непарним індексом
+let x = 0;
+while (x < array5.length) {
+    if (x % 2) {
+        console.log(array5[x])
+    }
+    x++
+}
+// 4. перебрати циклом for та вивести  числа тільки з непарним індексом
+for (let y = 0; y < array5.length; y++) {
+    if (y % 2) {
+        console.log(array5[y])
+    }
+}
+// 5. перебрати циклом while та вивести  числа тільки парні  значення
+let z = 0;
+while (z < array5.length) {
+    if (!(array5[z] % 2)) {
+        console.log(array5[z])
+    }
+    z++
+}
+// 6. перебрати циклом for та вивести  числа тільки парні  значення
+for (let q = 0; q < array5.length; q++) {
+    if (!(array5[q] % 2)) {
+        console.log(array5[q])
+    }
+}
+// 7. замінити кожне число кратне 3 на слово "okten"
+for (const value of array5) {
+    if (!(value % 3)) {
+        console.log(value)
+    }
+}
+// 8. вивести масив в зворотньому порядку.
+const newArray = [];
+for (let n = array5.length - 1; n > 0; n--) {
+    const changeArray = array5[n]
+    console.log(changeArray)
+    newArray.push(changeArray)
+}
+console.log(newArray)
+// 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
 
-let usersList = [
+// 1
+let i2 = array5.length - 1;
+while (i2 >= 0) {
+    console.log(array5[i2])
+    i2--
+}
+// 2
+for (let j2 = array5.length - 1; j2 >= 0; j2--) {
+    console.log(array5[j2])
+}
+// 3
+let x2 = array5.length - 1;
+while (x2 > 0) {
+    if (x2 % 2) {
+        console.log(array5[x2])
+    }
+    x2--
+}
+// 4
+for (let y = array5.length - 1; y > 0; y--) {
+    if (y % 2) {
+        console.log(array5[y])
+    }
+}
+// 5
+let z2 = array5.length - 1;
+while (z2 >= 0) {
+    if (!(array5[z2] % 2)) {
+        console.log(array5[z2])
+    }
+    z2--
+}
+// 6
+for (let q2 = array5.length - 1; q2 >= 0; q2--) {
+    if (!(array5[q2] % 2)) {
+        console.log(array5[q2])
+        console.log(q2)
+    }
+}
+// 7
+for (const value of array5) {
+    if (!(value % 3)) {
+        console.log(value)
+    }
+}
+for (let value = array5.length - 1; value >= 0; value--) {
+    if (!(value % 3)) {
+        console.log(array5[value])
+    }
+}
+// - Створити масив з 10 числових елементів. Вивести в консоль всі його елементи в циклі.
+const numbersArray = [42, 3.14, 100, -5, 0, 1.618, -273, 7.777, 123456789, -987654321];
+for (const number of numbersArray) {
+    console.log(number)
+}
+// - Створити масив з 10 строкрових елементів. Вивести в консоль всі його елементи в циклі.
+const stringsArray = [
+    "Hello",
+    "World",
+    "OpenAI",
+    "JavaScript",
+    "Programming",
+    "Language",
+    "Model",
+    "ChatGPT",
+    "String",
+    "Array"
+];
+for (const stringValue of stringsArray) {
+    console.log(stringValue)
+}
+// - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
+const mixedArray = [
+    42,
+    "Hello, world!",
+    true,
+    {name: "John", age: 30},
+    [1, 2, 3],
+    null,
+    undefined,
+    23,
+    true,
+    "Coding"
+];
+
+for (const mixedArrayElement of mixedArray) {
+    console.log(mixedArrayElement)
+}
+
+// - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
+const mixedArray2 = [
+    42,
+    "Hello, world!",
+    true,
+    3.14,
+    "JavaScript",
+    false,
+    -10,
+    "OpenAI",
+    true,
+    0
+];
+for (const mixedArray2Element of mixedArray2) {
+    if (typeof mixedArray2Element === "boolean") {
+        console.log(mixedArray2Element)
+    }
+}
+// - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки числові елементи
+for (const mixedArray2Element of mixedArray2) {
+    if (typeof mixedArray2Element === "number") {
+        console.log(mixedArray2Element)
+    }
+}
+// - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки рядкові елементи
+for (const mixedArray2Element of mixedArray2) {
+    if (typeof mixedArray2Element === "string") {
+        console.log(mixedArray2Element)
+    }
+}
+// - Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+const array6 = [];
+array6[0] = "Jack";
+array6[1] = 42;
+array6[2] = true;
+array6[3] = {name: "John", age: 30};
+array6[4] = [1, 2, 3];
+array6[5] = null;
+array6[6] = undefined;
+array6[7] = false;
+array6[8] = 45;
+array6[9] = "Hello";
+
+for (const array6Element of array6) {
+    console.log(array6Element)
+}
+// - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+    document.write(`${i} `)
+
+}
+document.write("<br>") // my additional
+// - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+for (let i = 0; i < 100; i++) {
+    console.log(i)
+    document.write(`${i} `)
+}
+document.write("<br>") // my additional
+// - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+for (let i = 0; i < 100; i = i + 2) {
+    console.log(i)
+    document.write(`${i} `)
+}
+document.write("<br>") // my additional
+// - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
+for (let i = 0; i < 100; i++) {
+    if (!(i % 2)) {
+        console.log(i)
+    }
+    if (!(i % 2)) {
+        document.write(`${i} `)
+    }
+
+}
+document.write("<br>") // my additional
+// - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
+for (let i = 0; i < 100; i++) {
+    if (i % 2) {
+        console.log(i)
+    }
+    if (i % 2) {
+        document.write(`${i} `)
+    }
+
+}
+// стоврити масив книжок (назва, кількість сторінок, автори , жанри).
+const books = [
     {
-        id: 1,
-        name: 'Leanne Graham',
-        username: 'Bret',
-        email: 'Sincere@april.biz',
-        address: {
-            street: 'Kulas Light',
-            suite: 'Apt. 556',
-            city: 'Gwenborough',
-            zipcode: '92998-3874',
-            geo: {
-                lat: '-37.3159',
-                lng: '81.1496'
-            }
-        },
-        phone: '1-770-736-8031 x56442',
-        website: 'hildegard.org',
-        company: {
-            name: 'Romaguera-Crona',
-            catchPhrase: 'Multi-layered client-server neural-net',
-            bs: 'harness real-time e-markets'
-        }
+        title: "The Great Gatsby",
+        pageCount: 180,
+        authors: ["F. Scott Fitzgerald"],
+        genres: ["Fiction", "Classics"]
     },
     {
-        id: 2,
-        name: 'Ervin Howell',
-        username: 'Antonette',
-        email: 'Shanna@melissa.tv',
-        address: {
-            street: 'Victor Plains',
-            suite: 'Suite 879',
-            city: 'Wisokyburgh',
-            zipcode: '90566-7771',
-            geo: {
-                lat: '-43.9509',
-                lng: '-34.4618'
-            }
-        },
-        phone: '010-692-6593 x09125',
-        website: 'anastasia.net',
-        company: {
-            name: 'Deckow-Crist',
-            catchPhrase: 'Proactive didactic contingency',
-            bs: 'synergize scalable supply-chains'
-        }
+        title: "To Kill a Mockingbird",
+        pageCount: 281,
+        authors: ["Harper Lee"],
+        genres: ["Fiction", "Classics"]
     },
     {
-        id: 3,
-        name: 'Clementine Bauch',
-        username: 'Samantha',
-        email: 'Nathan@yesenia.net',
-        address: {
-            street: 'Douglas Extension',
-            suite: 'Suite 847',
-            city: 'McKenziehaven',
-            zipcode: '59590-4157',
-            geo: {
-                lat: '-68.6102',
-                lng: '-47.0653'
-            }
-        },
-        phone: '1-463-123-4447',
-        website: 'ramiro.info',
-        company: {
-            name: 'Romaguera-Jacobson',
-            catchPhrase: 'Face to face bifurcated interface',
-            bs: 'e-enable strategic applications'
-        }
+        title: "1984",
+        pageCount: 328,
+        authors: ["George Orwell"],
+        genres: ["Fiction", "Dystopian"]
     },
     {
-        id: 4,
-        name: 'Patricia Lebsack',
-        username: 'Karianne',
-        email: 'Julianne.OConner@kory.org',
-        address: {
-            street: 'Hoeger Mall',
-            suite: 'Apt. 692',
-            city: 'South Elvis',
-            zipcode: '53919-4257',
-            geo: {
-                lat: '29.4572',
-                lng: '-164.2990'
-            }
-        },
-        phone: '493-170-9623 x156',
-        website: 'kale.biz',
-        company: {
-            name: 'Robel-Corkery',
-            catchPhrase: 'Multi-tiered zero tolerance productivity',
-            bs: 'transition cutting-edge web services'
-        }
-    },
-    {
-        id: 5,
-        name: 'Chelsey Dietrich',
-        username: 'Kamren',
-        email: 'Lucio_Hettinger@annie.ca',
-        address: {
-            street: 'Skiles Walks',
-            suite: 'Suite 351',
-            city: 'Roscoeview',
-            zipcode: '33263',
-            geo: {
-                lat: '-31.8129',
-                lng: '62.5342'
-            }
-        },
-        phone: '(254)954-1289',
-        website: 'demarco.info',
-        company: {
-            name: 'Keebler LLC',
-            catchPhrase: 'User-centric fault-tolerant solution',
-            bs: 'revolutionize end-to-end systems'
-        }
-    },
-    {
-        id: 6,
-        name: 'Mrs. Dennis Schulist',
-        username: 'Leopoldo_Corkery',
-        email: 'Karley_Dach@jasper.info',
-        address: {
-            street: 'Norberto Crossing',
-            suite: 'Apt. 950',
-            city: 'South Christy',
-            zipcode: '23505-1337',
-            geo: {
-                lat: '-71.4197',
-                lng: '71.7478'
-            }
-        },
-        phone: '1-477-935-8478 x6430',
-        website: 'ola.org',
-        company: {
-            name: 'Considine-Lockman',
-            catchPhrase: 'Synchronised bottom-line interface',
-            bs: 'e-enable innovative applications'
-        }
-    },
-    {
-        id: 7,
-        name: 'Kurtis Weissnat',
-        username: 'Elwyn.Skiles',
-        email: 'Telly.Hoeger@billy.biz',
-        address: {
-            street: 'Rex Trail',
-            suite: 'Suite 280',
-            city: 'Howemouth',
-            zipcode: '58804-1099',
-            geo: {
-                lat: '24.8918',
-                lng: '21.8984'
-            }
-        },
-        phone: '210.067.6132',
-        website: 'elvis.io',
-        company: {
-            name: 'Johns Group',
-            catchPhrase: 'Configurable multimedia task-force',
-            bs: 'generate enterprise e-tailers'
-        }
-    },
-    {
-        id: 8,
-        name: 'Nicholas Runolfsdottir V',
-        username: 'Maxime_Nienow',
-        email: 'Sherwood@rosamond.me',
-        address: {
-            street: 'Ellsworth Summit',
-            suite: 'Suite 729',
-            city: 'Aliyaview',
-            zipcode: '45169',
-            geo: {
-                lat: '-14.3990',
-                lng: '-120.7677'
-            }
-        },
-        phone: '586.493.6943 x140',
-        website: 'jacynthe.com',
-        company: {
-            name: 'Abernathy Group',
-            catchPhrase: 'Implemented secondary concept',
-            bs: 'e-enable extensible e-tailers'
-        }
-    },
-    {
-        id: 9,
-        name: 'Glenna Reichert',
-        username: 'Delphine',
-        email: 'Chaim_McDermott@dana.io',
-        address: {
-            street: 'Dayna Park',
-            suite: 'Suite 449',
-            city: 'Bartholomebury',
-            zipcode: '76495-3109',
-            geo: {
-                lat: '24.6463',
-                lng: '-168.8889'
-            }
-        },
-        phone: '(775)976-6794 x41206',
-        website: 'conrad.com',
-        company: {
-            name: 'Yost and Sons',
-            catchPhrase: 'Switchable contextually-based project',
-            bs: 'aggregate real-time technologies'
-        }
-    },
-    {
-        id: 10,
-        name: 'Clementina DuBuque',
-        username: 'Moriah.Stanton',
-        email: 'Rey.Padberg@karina.biz',
-        address: {
-            street: 'Kattie Turnpike',
-            suite: 'Suite 198',
-            city: 'Lebsackbury',
-            zipcode: '31428-2261',
-            geo: {
-                lat: '-38.2386',
-                lng: '57.2232'
-            }
-        },
-        phone: '024-648-3804',
-        website: 'ambrose.net',
-        company: {
-            name: 'Hoeger LLC',
-            catchPhrase: 'Centralized empowering task-force',
-            bs: 'target end-to-end models'
-        }
+        title: "The Catcher in the Rye",
+        pageCount: 277,
+        authors: ["J.D. Salinger"],
+        genres: ["Fiction", "Coming-of-age"]
     }
 ];
-document.write("<div class=\"users-box\">")
-for (const usersListElement of usersList) {
-    document.write(`
-        <div class=\"user-block\">
-            <h2>${usersListElement.id} - ${usersListElement.name} - ${usersListElement.username} </h2>
-            <h3>${usersListElement.email} - ${usersListElement.phone}</h3>
-        <div class=\"address-block\">
-            <p>City - ${usersListElement.address.city}</p>
-            <p>Street - ${usersListElement.address.street}</p>
-            <p>Suite - ${usersListElement.address.suite}</p>
-            <p>Zip code - ${usersListElement.address.zipcode}</p>
-        </div>
-        </div>
-        
-`)
+// -знайти наібльшу книжку.
+
+const result = books[1].pageCount
+// console.log(result
+for (const book of books) {
+    console.log(book.pageCount)
 }
-document.write("</div>")
+// - знайти книжку/ки з найбільшою кількістю жанрів
+// - знайти книжку/ки з найдовшою назвою
+// - знайти книжку/ки які писали 2 автори
+// - знайти книжку/ки які писав 1 автор
