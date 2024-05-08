@@ -258,9 +258,9 @@ const books = [
         genres: ["Fiction", "Classics"]
     },
     {
-        title: "To Kill a Mockingbird",
+        title: "To Kill a Mockingbird ",
         pageCount: 281,
-        authors: ["Harper Lee"],
+        authors: ["Harper Lee", "The second unknown author"],
         genres: ["Fiction", "Classics"]
     },
     {
@@ -272,18 +272,65 @@ const books = [
     {
         title: "The Catcher in the Rye",
         pageCount: 277,
-        authors: ["J.D. Salinger"],
-        genres: ["Fiction", "Coming-of-age"]
+        authors: ["J.D. Salinger", "The second unknown author"],
+        genres: ["Fiction"]
     }
 ];
 // -знайти наібльшу книжку.
 
-const result = books[1].pageCount
-// console.log(result
+let theBiggestBook = books[0];
+// console.log(theBiggestBook)
 for (const book of books) {
     console.log(book.pageCount)
+    if (book.pageCount > theBiggestBook.pageCount) {
+        theBiggestBook = book
+    }
 }
+console.log(theBiggestBook)
 // - знайти книжку/ки з найбільшою кількістю жанрів
+
+let genreResult = [];
+let theBiggestGenre = books[0];
+for (const book of books) {
+    if (book.genres.length > theBiggestGenre.genres.length) {
+        theBiggestGenre = book;
+    } else if (book.genres.length === theBiggestGenre.genres.length) {
+        genreResult[genreResult.length] = book;
+    }
+    console.log(book.genres.length)
+}
+console.log(genreResult.length)
 // - знайти книжку/ки з найдовшою назвою
+
+
+let titleResult = [];
+let theBiggestTitle = books[0];
+for (const book of books) {
+    console.log(book.title.length)
+    if (book.title.length > theBiggestTitle.title.length) {
+        theBiggestTitle = book;
+    } else if (book.title.length === theBiggestTitle.title.length) {
+        titleResult[titleResult.length] = book
+    }
+}
+console.log(titleResult.length)
+
+
 // - знайти книжку/ки які писали 2 автори
+let twoAuthors = [];
+for (const book of books) {
+    console.log(book.authors.length)
+    if (book.authors.length === 2) {
+        twoAuthors[twoAuthors.length] = book;
+    }
+}
+console.log(twoAuthors.length)
 // - знайти книжку/ки які писав 1 автор
+let oneAuthor = [];
+for (const book of books) {
+    console.log(book.authors.length)
+    if (book.authors.length === 1) {
+        oneAuthor[oneAuthor.length] = book
+    }
+}
+console.log(oneAuthor.length)
