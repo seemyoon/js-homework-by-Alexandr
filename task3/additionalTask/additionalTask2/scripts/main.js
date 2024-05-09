@@ -299,7 +299,7 @@ for (const book of books) {
     }
     console.log(book.genres.length)
 }
-console.log(genreResult.length)
+console.log(genreResult)
 // - знайти книжку/ки з найдовшою назвою
 
 
@@ -313,7 +313,7 @@ for (const book of books) {
         titleResult[titleResult.length] = book
     }
 }
-console.log(titleResult.length)
+console.log(titleResult)
 
 
 // - знайти книжку/ки які писали 2 автори
@@ -333,4 +333,4 @@ for (const book of books) {
         oneAuthor[oneAuthor.length] = book
     }
 }
-console.log(oneAuthor.length)
+console.log(oneAuthor)
