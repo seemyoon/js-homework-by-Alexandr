@@ -28,15 +28,7 @@ function square3(h, r, pi) {
 const result2 = square3(7, 3, Math.floor((Math.PI) * 100) / 100);
 console.log(result2)
 // - створити функцію яка приймає масив та виводить кожен його елемент
-const mixedArray = [
-    42,
-    "Hello, world!",
-    true,
-    {name: "John", age: 30},
-    [1, 2, 3],
-    null,
-    undefined,
-];
+const mixedArray = [42, "Hello, world!", true, {name: "John", age: 30}, [1, 2, 3], null, undefined,];
 const arrFunc = (array) => {
     for (const mixedArrayElement of array) {
         console.log(mixedArrayElement);
@@ -69,15 +61,7 @@ const liFunc2 = (text, quantity) => {
 }
 liFunc2("Cool", 20)
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-const mixedArray2 = [
-    42,
-    "Hello, world!",
-    true,
-    false,
-    "JavaScript",
-    234,
-    1276
-];
+const mixedArray2 = [42, "Hello, world!", true, false, "JavaScript", 234, 1276];
 const liFunc3 = (array) => {
     document.write("<ul>")
     for (const elem of array) {
@@ -88,13 +72,9 @@ const liFunc3 = (array) => {
 liFunc3(mixedArray2)
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-const usersArray = [
-    {id: 1, name: "John", age: 30},
-    {id: 2, name: "Alice", age: 25},
-    {id: 3, name: "Bob", age: 35},
-    {id: 4, name: "Emily", age: 28},
-    {id: 5, name: "Michael", age: 40}
-];
+const usersArray = [{id: 1, name: "John", age: 30}, {id: 2, name: "Alice", age: 25}, {
+    id: 3, name: "Bob", age: 35
+}, {id: 4, name: "Emily", age: 28}, {id: 5, name: "Michael", age: 40}];
 const userFunc = (users) => {
     for (const user of users) {
         document.write(`
@@ -122,7 +102,7 @@ const numberFunc = () => {
 console.log(numberFunc())
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 // array is above
-const arr = [1,2,10];
+const arr = [1, 2, 10];
 
 function sum(array) {
     let newNumberArray = 0;
@@ -152,7 +132,26 @@ console.log(arraySwap)
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 function exchange(sumUAH, currencyValues, exchangeCurrency) {
-    return sumUAH / currencyValues[0].value + " " + exchangeCurrency
+    let userEnter = 0;
+    while (userEnter < currencyValues.length) {
+        if (currencyValues[userEnter].currency === exchangeCurrency) {
+            return console.log(sumUAH / currencyValues[userEnter].value + " " + exchangeCurrency)
+        }
+        userEnter++
+    }
+    // if ('USD' === exchangeCurrency) {
+    //     return console.log(sumUAH / currencyValues[0].value + " " + exchangeCurrency)
+    // } else if ('EUR' === exchangeCurrency) {
+    //
+    //     return console.log(sumUAH / currencyValues[1].value + " " + exchangeCurrency)
+    // } else {
+    //     console.log("Error")
+    // }
+    // for (let i = 0; i < sumUAH.length; i++) {
+    //     const sumUAHElement = sumUAH[i];
+    //
+    // }
+    // console.log(currencyValues.length)
 }
 
-console.log(exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'));
+exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD');

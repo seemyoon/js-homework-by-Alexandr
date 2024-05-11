@@ -29,11 +29,6 @@ while (z < random) {
 console.log(array3)
 
 
-
-
-
-
-
 //     d. Заповнити масив 20ма рандомними чисалами в діапазоні від 8 до 732 (Google: Generate random number JS)
 // 2. Вивести за допомогою console.log кожен третій елемен
 // 3. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
@@ -49,7 +44,7 @@ console.log(array3)
 //
 // - Дано 2 масиви з рівною кількістю об'єктів.
 // Масиви:
-//     let usersWithId = [
+// let usersWithId = [
 //         {id: 1, name: 'vasya', age: 31, status: false},
 //         {id: 2, name: 'petya', age: 30, status: true},
 //         {id: 3, name: 'kolya', age: 29, status: true},
@@ -80,9 +75,26 @@ console.log(array3)
 //             },
 //             // TO BE CONTINUED .....
 //         ]
-//
-//
-//
+let usersWithId = [
+    {id: 1, name: 'vasya', age: 31, status: false},
+    {id: 2, name: 'petya', age: 30, status: true},
+    {id: 3, name: 'kolya', age: 29, status: true},
+    {id: 4, name: 'olya', age: 28, status: false}
+];
+
+let citiesWithId = [
+    {user_id: 3, country: 'USA', city: 'Portland'},
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+    {user_id: 4, country: 'USA', city: 'Miami'}
+];
+// const allArr = () => {
+//     const newArr = []
+//     for (const user of usersWithId) {
+//         if(user.id === city)
+//     }
+// }
+// allArr(usersWithId, citiesWithId)
 //
 //         - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
 //
