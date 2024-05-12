@@ -1,32 +1,23 @@
+// ВСЕ ЗРОБИТИ СТРІЛОЧНИМИ ФУНКЦІЯМИ!
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
-function square(a, b) {
-    return a * b
-}
-
+const square = (a, b) => a * b
 console.log(square(3, 4))
-
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
-function square2(pi, radius) {
+const square2 = (pi, radius) => {
     const radiusSquared = radius ** 2
     const square = pi * radiusSquared
-    // console.log(square)
     return {radiusSquared, square}
 }
-
-const result = square2(Math.floor((Math.PI) * 100) / 100, 5)
-console.log(result);
+console.log(square2(Math.floor((Math.PI) * 100) / 100, 5));
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-// 2πR(H + R)
-function square3(h, r, pi) {
+const square3 = (h, r, pi) => {
     const height = h;
     const radius = r;
     const piValue = pi;
     const square = 2 * pi * r * (h + r)
     return {square, height, radius, piValue}
 }
-
-const result2 = square3(7, 3, Math.floor((Math.PI) * 100) / 100);
-console.log(result2)
+console.log(square3(7, 3, Math.floor((Math.PI) * 100) / 100));
 // - створити функцію яка приймає масив та виводить кожен його елемент
 const mixedArray = [42, "Hello, world!", true, {name: "John", age: 30}, [1, 2, 3], null, undefined,];
 const arrFunc = (array) => {
@@ -50,7 +41,7 @@ const liFunc = (text) => {
         </ul>
     `)
 }
-liFunc("Some text")
+liFunc("Hello everyone")
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 const liFunc2 = (text, quantity) => {
     document.write("<ul>")
@@ -59,7 +50,7 @@ const liFunc2 = (text, quantity) => {
     }
     document.write("</ul>")
 }
-liFunc2("Cool", 20)
+liFunc2("Some text", 20)
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 const mixedArray2 = [42, "Hello, world!", true, false, "JavaScript", 234, 1276];
 const liFunc3 = (array) => {
@@ -70,7 +61,6 @@ const liFunc3 = (array) => {
     document.write("</ul>")
 }
 liFunc3(mixedArray2)
-
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 const usersArray = [{id: 1, name: "John", age: 30}, {id: 2, name: "Alice", age: 25}, {
     id: 3, name: "Bob", age: 35
@@ -101,10 +91,9 @@ const numberFunc = () => {
 }
 console.log(numberFunc())
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-// array is above
 const arr = [1, 2, 10];
 
-function sum(array) {
+const sum = (array) => {
     let newNumberArray = 0;
     console.log(newNumberArray)
     for (let numberArray of array) {
@@ -114,13 +103,12 @@ function sum(array) {
     return newNumberArray
 }
 
-console.log(sum(arr))
-
+sum(arr);
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 const arraySwap = [11, 22, 33, 44];
 
-function swap(arr, index1, index2) {
+const swap = (arr, index1, index2) => {
     let temporaryValue = arr[index1];
     arr[index1] = arr[index2];
     arr[index2] = temporaryValue;
@@ -128,10 +116,9 @@ function swap(arr, index1, index2) {
 }
 
 swap(arraySwap, 0, 1)
-console.log(arraySwap)
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-function exchange(sumUAH, currencyValues, exchangeCurrency) {
+const exchange = (sumUAH, currencyValues, exchangeCurrency) => {
     let userEnter = 0;
     while (userEnter < currencyValues.length) {
         if (currencyValues[userEnter].currency === exchangeCurrency) {
