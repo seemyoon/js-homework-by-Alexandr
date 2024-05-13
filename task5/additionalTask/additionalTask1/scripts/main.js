@@ -106,25 +106,3 @@ console.log(card.transferCredits(20, card2))
 console.log(card2.getCardOptions().balance);
 console.log(card.getCardOptions().balance)
 console.log(card.getCardOptions().historyLogs)
-const ex = (obj) =>{
-    // try{
-    //     const result =  obj.wife.name
-    //     console.log(result)
-    // }catch (e){
-    //     console.log(e)
-    // }
-    // console.log(result)
-    if (!obj.skills){
-        throw new Error("Object has no skills")
-    } else {
-        console.log("Its fine")
-    }
-}
-ex({skills:"js"})
-console.log("Hello")
-try {
-    console.log(a)
-} catch (e){
-    console.log(e)
-}
-console.log("Goodbye")
