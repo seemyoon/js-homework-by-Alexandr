@@ -106,3 +106,6 @@ console.log(card.transferCredits(20, card2))
 console.log(card2.getCardOptions().balance);
 console.log(card.getCardOptions().balance)
 console.log(card.getCardOptions().historyLogs)
+
+const str = "Alexandr"
+console.log(str.split("x"))
