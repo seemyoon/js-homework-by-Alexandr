@@ -45,10 +45,10 @@ function userCard(number) {
             return JSON.parse(JSON.stringify(card[number - 1]))
         }, putCredits: (cardReplenishment) => {
             if (typeof cardReplenishment === "number" && cardReplenishment > 0) {
-                card[number - 1].balance += cardReplenishment
+                let resultPutCredits = card[number - 1].balance += cardReplenishment
                 return card[number - 1].historyLogs.push({
                     operationType: "Received credits",
-                    credits: `${card[number - 1].balance}`,
+                    credits: resultPutCredits,
                     operationTime: "14/02/2019, 21:49:44"
                 }) // I prefer to use the push method
             } else {
@@ -57,10 +57,10 @@ function userCard(number) {
         }, takeCredits: (cashWithdrawal) => {
             if (typeof cashWithdrawal === "number" && cashWithdrawal > 0 && card[number - 1].balance > cashWithdrawal
                 && card[number - 1].transactionLimit > cashWithdrawal) {
-                card[number - 1].balance -= cashWithdrawal
+                let resultTakeCredits = card[number - 1].balance -= cashWithdrawal
                 return card[number - 1].historyLogs.push({
                     operationType: "Withdrawal of credits",
-                    credits: `${card[number - 1].balance}`,
+                    credits: resultTakeCredits,
                     operationTime: "14/02/2019, 21:49:44"
                 })
             } else {
@@ -68,10 +68,10 @@ function userCard(number) {
             }
         }, setTransactionLimit: (changeLimits) => {
             if (typeof changeLimits === "number" && changeLimits > 0) {
-                card[number - 1].transactionLimit = changeLimits
+                let resultSetTransactionLimit = card[number - 1].transactionLimit = changeLimits
                 return card[number - 1].historyLogs.push({
-                    operationType: "Withdrawal of credits",
-                    credits: `${card[number - 1].balance}`,
+                    operationType: "Transaction limit change",
+                    credits: resultSetTransactionLimit,
                     operationTime: "14/02/2019, 21:49:44"
                 })
             } else {
@@ -105,5 +105,26 @@ console.log(card2.getCardOptions().balance);
 console.log(card.transferCredits(20, card2))
 console.log(card2.getCardOptions().balance);
 console.log(card.getCardOptions().balance)
-
-
+console.log(card.getCardOptions().historyLogs)
+const ex = (obj) =>{
+    // try{
+    //     const result =  obj.wife.name
+    //     console.log(result)
+    // }catch (e){
+    //     console.log(e)
+    // }
+    // console.log(result)
+    if (!obj.skills){
+        throw new Error("Object has no skills")
+    } else {
+        console.log("Its fine")
+    }
+}
+ex({skills:"js"})
+console.log("Hello")
+try {
+    console.log(a)
+} catch (e){
+    console.log(e)
+}
+console.log("Goodbye")
