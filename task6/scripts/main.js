@@ -93,20 +93,6 @@ console.log(coursesAndDurationArray)
 let cardSuits = ['spades', 'diamonds', 'hearts', 'clubs'];
 let values = [6, 7, 8, 9, 10, 'jack', 'queen', 'king', 'ace'];
 // - знайти піковий туз
-// const resultOfFindAceSpades = []
-// const findAceSpades2 = cardSuits.filter(card => {
-//     if (card === "spades") {
-//         resultOfFindAceSpades.push(card);
-//         const findValues = values.filter(cardValue => {
-//             if (cardValue === "ace") {
-//                 resultOfFindAceSpades.push(cardValue);
-//                 return {card, cardValue}
-//             }
-//         })
-//     }
-// })
-// console.log(resultOfFindAceSpades)
-// 2 variant
 const callback = (acc, card) => {
     values.forEach(cardValue => {
         let color;
@@ -125,6 +111,7 @@ const callback = (acc, card) => {
     return acc
 }
 const findCard = cardSuits.reduce(callback, [])
+
 console.log(findCard)
 const resultFindAceSpades = findCard.filter(findAceSpades => findAceSpades.cardSuit === "spades" && findAceSpades.value === "ace")
 console.log(resultFindAceSpades)
@@ -141,17 +128,8 @@ const resultAllDiamonds = findCard.filter(findAllDiamonds => findAllDiamonds.car
 console.log(resultAllDiamonds)
 console.log(resultAllDiamonds.map(value5 => value5.cardSuit)) // only cardSuit
 // - всі трефи від 9 та більше
-console.log("=================")
-const resultClubsFrom9AndMore = findCard.filter(findClubsFrom9AndMore => findClubsFrom9AndMore.cardSuit ==="spades" && values.indexOf(findClubsFrom9AndMore.value) >= values.indexOf(9))
+const resultClubsFrom9AndMore = findCard.filter(findClubsFrom9AndMore => findClubsFrom9AndMore.cardSuit === "spades" && values.indexOf(findClubsFrom9AndMore.value) >= values.indexOf(9))
 console.log(resultClubsFrom9AndMore)
-// values.forEach((value, index) => {
-//     console.log(values.indexOf(9));})
-
-
-// values.forEach((value, index) => console.log(index))
-// console.log(index)
-
-
 // {
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
 //         value: '', // '6'-'10', 'ace','jack','queen','king','joker'
@@ -167,9 +145,101 @@ console.log(resultClubsFrom9AndMore)
 //     hearts:[],
 //     clubs:[]
 // }
+const callback2 = ((acc, cardValue2) => {
+    if (cardValue2.cardSuit === 'spades') {
+        acc.spades.push(cardValue2)
+    } else if (cardValue2.cardSuit === 'diamonds') {
+        acc.diamonds.push(cardValue2)
+    } else if (cardValue2.cardSuit === 'hearts') {
+        acc.hearts.push(cardValue2)
+    } else if (cardValue2.cardSuit === 'clubs') {
+        acc.clubs.push(cardValue2)
+    }
+    return acc
+})
+const reduceCards = findCard.reduce(callback2, {spades: [], diamonds: [], hearts: [], clubs: []})
+console.log(reduceCards)
+
 // =========================
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+// console.log(coursesArray[5].modules.includes("sass"))
+// console.log("------------------")
+const result = (searchModule) => {
+    return coursesArray.filter(course => course.modules.includes(searchModule))
+}
 // --написати пошук всіх об'єктів, в який в modules є sass
+console.log(result("sass"));
 // --написати пошук всіх об'єктів, в який в modules є docker
+console.log(result("docker"));
+
 
 
