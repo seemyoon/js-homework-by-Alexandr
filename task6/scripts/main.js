@@ -241,5 +241,3 @@ console.log(result("sass"));
 // --написати пошук всіх об'єктів, в який в modules є docker
 console.log(result("docker"));
 
-
-
