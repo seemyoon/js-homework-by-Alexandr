@@ -27,6 +27,10 @@ const str10 = ' dirty string   '
 const str10WithoutSpaces = str10.split(' ')
 const newStr10 = `${str10WithoutSpaces[1]} ${str10WithoutSpaces[2]}`
 console.log(newStr10)
+// or
+const str10V2 = ' dirty string   ';
+const newStr10V2 = str10V2.trim()
+console.log(newStr10V2)
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Ревуть воли як ясла повні';
 // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
@@ -85,40 +89,69 @@ const mapArr = coursesAndDurationArray.map((course, index) => course.id = index+
 console.log(mapArr)
 console.log(coursesAndDurationArray)
 // =========================
-const decks = [
-    {
-        cardSuit: "Hearts",
-        color: "Red",
-        cards: ["6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-    },
-    {
-        cardSuit: "Diamonds",
-        color: "Red",
-        cards: ["6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-    },
-    {
-        cardSuit: "Clubs",
-        color: "Black",
-        cards: ["6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-    },
-    {
-        cardSuit: "Spades",
-        color: "Black",
-        cards: ["6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
-    }
-];
-
-// console.log(decks);
-// const search = arr.forEach()
 //     описати колоду карт (від 6 до туза без джокерів)
+let cardSuits = ['spades', 'diamonds', 'hearts', 'clubs'];
+let values = [6, 7, 8, 9, 10, 'jack', 'queen', 'king', 'ace'];
 // - знайти піковий туз
-const findAceSpades = decks.filter((card) => card.cardSuit === "Spades" &&  card.cards === "Ace")
-console.log(findAceSpades)
+// const resultOfFindAceSpades = []
+// const findAceSpades2 = cardSuits.filter(card => {
+//     if (card === "spades") {
+//         resultOfFindAceSpades.push(card);
+//         const findValues = values.filter(cardValue => {
+//             if (cardValue === "ace") {
+//                 resultOfFindAceSpades.push(cardValue);
+//                 return {card, cardValue}
+//             }
+//         })
+//     }
+// })
+// console.log(resultOfFindAceSpades)
+// 2 variant
+const callback = (acc, card) => {
+    values.forEach(cardValue => {
+        let color;
+        if (card === 'diamonds' || card === 'hearts') {
+            color = "red"
+        } else {
+            color = "black"
+        }
+        acc.push({
+            cardSuit: card,
+            value: cardValue,
+            color: color,
+
+        })
+    })
+    return acc
+}
+const findCard = cardSuits.reduce(callback, [])
+console.log(findCard)
+const resultFindAceSpades = findCard.filter(findAceSpades => findAceSpades.cardSuit === "spades" && findAceSpades.value === "ace")
+console.log(resultFindAceSpades)
 // - всі шістки
+const resultAllSixes = findCard.filter(findAllSixes => findAllSixes.value === 6)
+console.log(resultAllSixes)
+console.log(resultAllSixes.map(value3 => value3.value)) // only sixes
 // - всі червоні карти
+const resultAllRedCards = findCard.filter(findAllRedCards => findAllRedCards.color === "red")
+console.log(resultAllRedCards)
+console.log(resultAllRedCards.map(value4 => value4.color)) // only value "red"
 // - всі буби
+const resultAllDiamonds = findCard.filter(findAllDiamonds => findAllDiamonds.cardSuit === "diamonds")
+console.log(resultAllDiamonds)
+console.log(resultAllDiamonds.map(value5 => value5.cardSuit)) // only cardSuit
 // - всі трефи від 9 та більше
-//
+console.log("=================")
+const resultClubsFrom9AndMore = findCard.filter(findClubsFrom9AndMore => findClubsFrom9AndMore.cardSuit ==="spades" && values.indexOf(findClubsFrom9AndMore.value) >= values.indexOf(9))
+console.log(resultClubsFrom9AndMore)
+// values.forEach((value, index) => {
+//     console.log(values.indexOf(9));})
+
+
+// values.forEach((value, index) => console.log(index))
+// console.log(index)
+
+
 // {
 //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
 //         value: '', // '6'-'10', 'ace','jack','queen','king','joker'
@@ -138,3 +171,5 @@ console.log(findAceSpades)
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
 // --написати пошук всіх об'єктів, в який в modules є sass
 // --написати пошук всіх об'єктів, в який в modules є docker
+
+
