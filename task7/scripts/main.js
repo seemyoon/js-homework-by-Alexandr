@@ -148,8 +148,8 @@ class Cinderella {
     }
 }
 
-const Cinderella1 = new Cinderella("Anna", 20, 34);
-const Cinderella2 = new Cinderella("Maria", 22, 35);
+const Cinderella1 = new Cinderella("Maria", 22, 35);
+const Cinderella2 = new Cinderella("Anna", 20, 34);
 const Cinderella3 = new Cinderella("Katherine", 23, 37);
 const Cinderella4 = new Cinderella("Elena", 21, 38);
 const Cinderella5 = new Cinderella("Julia", 24, 36);
@@ -160,18 +160,28 @@ const Cinderella9 = new Cinderella("Daria", 22, 36);
 const Cinderella10 = new Cinderella("Sophia", 23, 35);
 
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
-Cinderella.prototype.prince = function (namePrince = "Alexandr", agePrince = 23, shoe = 34) {
-    return {namePrince: namePrince, agePrince: agePrince, shoe: shoe}
-
+// Cinderella.prototype.prince = function (namePrince = "Alexandr", agePrince = 23, shoe = 34) {
+//     return {namePrince: namePrince, agePrince: agePrince, shoe: shoe}
+//
+// }
+class Prince{
+    constructor(namePrince, agePrince, shoe) {
+        this.namePrince = namePrince;
+        this.agePrince = agePrince;
+        this.shoe = shoe;
+    }
 }
+const prince1 = new Prince("Alexandr", 23, 34);
+console.log(prince1)
+
 
 const arrayCinderella = Array(Cinderella1, Cinderella2, Cinderella3, Cinderella4, Cinderella5, Cinderella6, Cinderella7, Cinderella8, Cinderella9, Cinderella10);
 for (const cinderella of arrayCinderella) {
-    if (cinderella.prince().shoe === cinderella.footSize){
-        console.log(`${cinderella.name} is cinderella for prince ${cinderella.prince().namePrince}`);
+    if (prince1.shoe === cinderella.footSize){
+        console.log(`${cinderella.name} is cinderella for prince ${prince1.namePrince}`);
     }
 }
-// const customForEach =
-//
-// const cinderellaWinner = arrayCinderella.find(customForEach =>)
+//     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+const cinderellaWinner = arrayCinderella.find(cinderella =>cinderella.footSize === prince1.shoe)
+console.log(cinderellaWinner)
 // Через Array.prototype. створити власний foreach, filter, map
