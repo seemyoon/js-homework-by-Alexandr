@@ -20,6 +20,7 @@ const user8 = new User(8, "Anna", "Vasileva", "8@example.com", 80671234574);
 const user9 = new User(9, "Dmytro", "Kovalchuk", "9@example.com", 80671234575);
 const user10 = new User(10, "Yuliya", "Kovalenko", "10@example.com", 80671234576);
 const arrUsers = Array(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10);
+
 console.log(arrUsers)
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 const filter = arrUsers.filter(user => user.id % 2 === 0);
@@ -67,23 +68,28 @@ console.log(sort2)
 console.log("===================")
 
 function Car(model, manufacture, yearOfManufacture, maxSpeed, engineCapacity) {
-    this.info = function () {
-        return `Model - ${model}; Manufacture - ${manufacture}; Year of manufacture = ${yearOfManufacture}; Max speed = ${maxSpeed}; Engine capacity = ${engineCapacity};`
-    };
-    this.drive = function () {
-        return console.log(`їдемо зі швидкістю ${maxSpeed} на годину`)
-    }
-    this.increaseMaxSpeed = function (newSpeed) {
-        return maxSpeed + newSpeed
-    }
-    this.changeYear = function (newValue) {
-        return yearOfManufacture = newValue
-    }
-    this.addDriver = function (driver) {
-        return driver
-    }
+    this.model = model;
+    this.manufacture = manufacture;
+    this.yearOfManufacture = yearOfManufacture;
+    this.maxSpeed = maxSpeed;
+    this.engineCapacity = engineCapacity;
 }
 
+Car.prototype.info = function () {
+    return `Model - ${this.model}; Manufacture - ${this.manufacture}; Year of manufacture = ${this.yearOfManufacture}; Max speed = ${this.maxSpeed}; Engine capacity = ${this.engineCapacity};`
+};
+Car.prototype.drive = function () {
+    return console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
+}
+Car.prototype.increaseMaxSpeed = function (newSpeed) {
+    return this.maxSpeed + newSpeed
+}
+Car.prototype.changeYear = function (newValue) {
+    return this.yearOfManufacture = newValue
+}
+Car.prototype.addDriver = function (driver) {
+    return driver
+}
 const car = new Car("Civic", "Honda", 2019, 200, 1.5)
 car.drive()
 console.log(car.info());
@@ -107,28 +113,23 @@ class Car2 {
         this.maxSpeed = maxSpeed;
         this.engineCapacity = engineCapacity;
     }
-
-    info() {
-        return `Model - ${this.model}; Manufacture - ${this.manufacture}; Year of manufacture = ${this.yearOfManufacture}; Max speed = ${this.maxSpeed}; Engine capacity = ${this.engineCapacity};`
-    };
-
-    drive() {
-        return console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
-    }
-
-    increaseMaxSpeed(newSpeed) {
-        return this.maxSpeed + newSpeed
-    }
-
-    changeYear(newValue) {
-        return this.yearOfManufacture = newValue
-    }
-
-    addDriver(driver) {
-        return driver
-    }
 }
 
+Car2.prototype.info = function () {
+    return `Model - ${this.model}; Manufacture - ${this.manufacture}; Year of manufacture = ${this.yearOfManufacture}; Max speed = ${this.maxSpeed}; Engine capacity = ${this.engineCapacity};`
+};
+Car2.prototype.drive = function () {
+    return console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
+}
+Car2.prototype.increaseMaxSpeed = function (newSpeed) {
+    return this.maxSpeed + newSpeed
+}
+Car2.prototype.changeYear = function (newValue) {
+    return this.yearOfManufacture = newValue
+}
+Car2.prototype.addDriver = function (driver) {
+    return driver
+}
 const car2 = new Car2("Civic", "Honda", 2019, 200, 1.5)
 car2.drive()
 console.log(car2.info());
@@ -164,24 +165,55 @@ const Cinderella10 = new Cinderella("Sophia", 23, 35);
 //     return {namePrince: namePrince, agePrince: agePrince, shoe: shoe}
 //
 // }
-class Prince{
+class Prince {
     constructor(namePrince, agePrince, shoe) {
         this.namePrince = namePrince;
         this.agePrince = agePrince;
         this.shoe = shoe;
     }
 }
+
 const prince1 = new Prince("Alexandr", 23, 34);
 console.log(prince1)
 
 
 const arrayCinderella = Array(Cinderella1, Cinderella2, Cinderella3, Cinderella4, Cinderella5, Cinderella6, Cinderella7, Cinderella8, Cinderella9, Cinderella10);
 for (const cinderella of arrayCinderella) {
-    if (prince1.shoe === cinderella.footSize){
+    if (prince1.shoe === cinderella.footSize) {
         console.log(`${cinderella.name} is cinderella for prince ${prince1.namePrince}`);
     }
 }
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
-const cinderellaWinner = arrayCinderella.find(cinderella =>cinderella.footSize === prince1.shoe)
+const cinderellaWinner = arrayCinderella.find(cinderella => cinderella.footSize === prince1.shoe)
 console.log(cinderellaWinner)
 // Через Array.prototype. створити власний foreach, filter, map
+//forEach
+const array6 = [3124, 645, 678, 9, "right", "left"]
+Array.prototype.customForEach = function (callback) {
+    for (const item of this) {
+        callback(item)
+    }
+}
+array6.customForEach(item => console.log(item));
+//filter
+Array.prototype.customFilter = function (callback) {
+    const arr = []
+    for (const item of this) {
+        if (callback(item)) {
+            arr.push(item)
+        }
+    }
+    return arr
+}
+array6.customFilter(item => typeof item === "string");
+//map
+const array7 = [3124, 645, 648, 10]
+Array.prototype.customMap = function (callback) {
+    const arr = []
+    for (const item of this) {
+        arr.push(callback(item))
+    }
+    return arr
+}
+const res = array7.customMap(item => item/2);
+console.log(res)
