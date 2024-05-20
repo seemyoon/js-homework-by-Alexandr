@@ -128,15 +128,16 @@ Car2.prototype.changeYear = function (newValue) {
     return this.yearOfManufacture = newValue
 }
 Car2.prototype.addDriver = function (driver) {
-    return driver
+    return this.newDriver = driver
 }
 const car2 = new Car2("Civic", "Honda", 2019, 200, 1.5)
 car2.drive()
 console.log(car2.info());
 console.log(car2.increaseMaxSpeed(20));
 console.log(car2.changeYear(2021))
-car2.addDriver({name: "John", surname: "Smith", age: 35, licenseNumber: "ABC123456", experienceYears: 15})
-
+// car2.addDriver({name: "John", surname: "Smith", age: 35, licenseNumber: "ABC123456", experienceYears: 15})
+console.log(car2.addDriver({name: "John", surname: "Smith", age: 35, licenseNumber: "ABC123456", experienceYears: 15}))
+console.log(car2.newDriver.name)
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
@@ -215,5 +216,5 @@ Array.prototype.customMap = function (callback) {
     }
     return arr
 }
-const res = array7.customMap(item => item/2);
+const res = array7.customMap(item => item / 2);
 console.log(res)
