@@ -257,7 +257,6 @@ for (const coursesArrayElement of coursesArray) {
     const hourDuration = document.createElement("h2");
     const hourDurationInHtml = divHourDurationInHtml.appendChild(hourDuration);
     hourDurationInHtml.innerText = "Hour duration: " + coursesArrayElement.hourDuration;
-
     for (const module of coursesArrayElement.modules) {
         const moduleCourse = document.createElement("li");
         moduleCourse.classList.add("modulesItemStyle")
