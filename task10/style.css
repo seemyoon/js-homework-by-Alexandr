@@ -1,0 +1,35 @@
+#btn {
+    width: 100px;
+    height: 50px;
+    background-color: blanchedalmond;
+    display: block;
+    margin-bottom: 10px;
+}
+input{
+    margin: 10px;
+    display: block;
+}
+.container{
+    width: 200px;
+    height: 200px;
+    background-color: peachpuff;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    font-size: 24px;
+}
+.container2{
+    width: 500px;
+    height: 500px;
+    background-color:darkgrey;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+}
