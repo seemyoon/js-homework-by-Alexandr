@@ -1,0 +1,58 @@
+body{
+    background-color: #4589d4;
+}
+h1{
+    font-family: Verdana;
+    color: #f9fb10;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 2px 2px 6px #000000;
+    margin-bottom: 30px;
+}
+h3{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.recipes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.recipe{
+    background-color: #ffffb6;
+    width: 1000px;
+    height: 100%;
+    gap: 20px;
+    border: solid 5px black;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    flex-direction: column;
+}
+.paragraphInstructions{
+    margin: 30px 100px;
+    text-align: center;
+}
+img{
+    display: block;
+    width: 500px;
+    margin-bottom: 20px;
+}
+h4{
+    margin: 5px;
+}
+.listTags{
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+.listTags > li{
+    list-style-type: none;
+    margin-right: 15px;
+}
+.healingTags{
+    margin-bottom: 5px;
+}
