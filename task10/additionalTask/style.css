@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+.container {
+    /*width: 500px;*/
+    height: 100vh;
+    background-color: darkgrey;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
