@@ -168,7 +168,6 @@ const arrUsers = [
     {name: "User99", age: 26, skills: ["js", "html/css"]},
     {name: "User100", age: 29, skills: ["python", "django"]}
 ];
-console.log(arrUsers)
 const quantityObj = 10;
 const allPages = arrUsers.length / quantityObj;
 let currentPage = 0;
@@ -180,7 +179,6 @@ function displayObjects() {
     const startIndex = currentPage * quantityObj;
     const endIndex = startIndex + quantityObj;
     const quantityObjOnPage = arrUsers.slice(startIndex, endIndex)
-
     listUsers.innerHTML = "";
 
     quantityObjOnPage.forEach(user => {
@@ -194,8 +192,8 @@ function displayObjects() {
 document.addEventListener("DOMContentLoaded", () => displayObjects())
 btnPrev.addEventListener("click", () => {
     currentPage--
-    if(currentPage <0){
-        currentPage = allPages -1
+    if (currentPage < 0) {
+        currentPage = allPages - 1
     }
     displayObjects()
 })

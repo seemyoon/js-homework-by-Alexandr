@@ -6,15 +6,24 @@ const div3 = document.createElement("div");
 div3.classList.add("container")
 document.body.appendChild(div3)
 const money = 100
+const currentTime = new Date().getTime() //  live (firstTime = 2s; secondTime = 10s)
+console.log(currentTime)
 let moneyValue = localStorage.getItem("money");
-if (!moneyValue) {
+let timeStart = localStorage.getItem("timeUpdate"); //  2s -> LS (start time)
+if (!moneyValue && !timeStart) {
+    localStorage.setItem("timeUpdate", JSON.stringify(currentTime))
     localStorage.setItem("money", JSON.stringify(money))
-} else if (moneyValue) {
-    const moneyConvert = JSON.parse(moneyValue)
-    localStorage.setItem("money", moneyConvert + 10)
+} else {
+    timeStart = JSON.parse(timeStart)
+    moneyValue = JSON.parse(moneyValue)
+    if (currentTime - timeStart > 4000) {
+        moneyValue += 10;
+        localStorage.setItem("money", JSON.stringify(moneyValue));
+        localStorage.setItem("timeUpdate", JSON.stringify(currentTime));
+    }
 }
+const moneyValue2 = localStorage.getItem("money");
+
 const p = document.createElement('p')
 div3.appendChild(p)
-setTimeout(() => {
-    p.innerText = localStorage.getItem("money");
-}, 10000)
+p.innerText = moneyValue2
