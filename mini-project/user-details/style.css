@@ -1,0 +1,60 @@
+body {
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.info-user {
+    width: 90%;
+    background-color: gainsboro;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.btnMainPostInfo {
+    width: 90%;
+    height: 10vh;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+    font-weight: 800;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.5s ease-in-out;
+    font-size: 2.5em;
+    color: #444444;
+}
+
+ul {
+    padding: 0;
+    font-size: 1.4em;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    margin: 0;
+}
+
+.user-posts {
+    width: 90%;
+    background-color: gainsboro;
+    border-radius: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.post-title {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
